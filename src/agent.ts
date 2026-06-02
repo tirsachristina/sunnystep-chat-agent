@@ -99,7 +99,8 @@ export async function* runAgent(
       tools: TOOL_DEFINITIONS,
       tool_choice: { type: "auto" },
       messages,
-      thinking: { type: "adaptive" },
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      thinking: { type: "adaptive" } as any,
     });
 
     // Collect the full response while streaming text to caller
